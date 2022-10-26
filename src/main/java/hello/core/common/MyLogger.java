@@ -1,6 +1,7 @@
 package hello.core.common;
 
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -26,7 +27,7 @@ public class MyLogger {
 
     @PostConstruct
     public void init() {
-        String s = java.util.UUID.randomUUID().toString();
+        uuid = java.util.UUID.randomUUID().toString();
         System.out.println("[" + uuid + "] request scope bean create:" + this);
     }
 
